@@ -1,18 +1,28 @@
 # Weather App
 
-A Flutter-based weather application that provides real-time weather information for any location.
+A Flutter-based weather application that allows users to view and save weather information for different cities.
 
 ## Features
 
-- Current weather conditions with temperature, humidity, and wind speed
-- 5-day weather forecast
+- Current weather conditions:
+  - Temperature
+  - Humidity
+  - Air speed
+  - Weather description
+- Weather icons and animations
 - Location-based weather updates
-- Search for weather by city name
-- Beautiful and intuitive user interface
-- Automatic location detection
-- Weather condition icons and animations
-- Temperature display in both Celsius and Fahrenheit
-- Offline support with cached weather data
+- Data storage:
+  - SQLite database for weather data
+  - Automatic time and date tracking
+- User Interface:
+  - Loading screen with spinner animation
+  - Weather display with icons
+  - Saved data viewing page
+  - Location selection
+- Data Management:
+  - Save current weather data
+  - View historical weather data
+  - Database caching for offline access
 
 ## Getting Started
 
@@ -74,19 +84,31 @@ flutter run
 ## Project Structure
 
 - `lib/`
-  - `main.dart` - Main application entry point
-  - `models/` - Data models
-  - `screens/` - UI screens
-  - `services/` - API and utility services
-  - `widgets/` - Reusable UI components
+  - `main.dart` - Route configuration and app initialization
+  - `database_helper.dart` - SQLite database operations
+  - `Worker/`
+    - `worker.dart` - Weather API integration and data processing
+  - `Activity/`
+    - `home.dart` - Main weather display screen with current conditions
+    - `loading.dart` - Initial loading screen with spinner
+    - `location.dart` - Location selection functionality
+    - `saved_data_page.dart` - View saved weather data from database
 
 ## Dependencies
 
-- `flutter_svg` - For weather icons
-- `geolocator` - For location services
+- `sqflite` - For SQLite database operations
+- `flutter_spinkit` - For loading animations
+- `weather_icons` - For weather condition icons
 - `http` - For API requests
 - `provider` - For state management
-- `shared_preferences` - For local storage
+
+## Dependencies
+
+- `sqflite` - For SQLite database operations
+- `flutter_spinkit` - For loading animations
+- `weather_icons` - For weather condition icons
+- `http` - For API requests
+- `provider` - For state management
 
 ## Contributing
 
