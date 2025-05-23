@@ -35,7 +35,7 @@ class Worker {
   Future<void> getData() async {
     try {
       Uri url = Uri.parse(
-          "https://api.openweathermap.org/data/2.5/weather?q=$location&appid=880c3d28c0332bc7b0437b857f35a454&units=metric");
+          "https://api.openweathermap.org/data/2.5/weather?q=$location&appid={API-KEY}&units=metric");
 
       final response = await http.get(url);
 
